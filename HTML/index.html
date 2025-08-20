@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La buena mesa</title>
+</head>
+
+<body>
+    <header>
+        <h1>La buena mesa</h1>
+        <p>Comida casera, sabor real</p>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./index.html#menu">Menu</a></li>
+                <li><a href="./index.html#nosotros">Nosotros</a></li>
+                <li><a href="./index.html#reserva">Reserva</a></li>
+                <li><a href="./ubicacion.html">¿Como llegar?</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="menu">
+            <article>
+                <h3>Milanesas con papas</h3>
+                <p>Descripcion de la milanesa</p>
+            </article>
+            <article>
+                <h3>Ensalada mixta</h3>
+                <p>Descripcion de la ensalada</p>
+            </article>
+            <article>
+                <h3>Postre de chocolate</h3>
+                <p>Descripcion del postre de chocolate</p>
+            </article>
+        </section>
+        <hr>
+        <aside id="nosotros">
+            <h2>Sobre nosotros</h2>
+            <p>Somos un restaurante familiar que ofrece comida casera con ingredientes frescos y de calidad.</p>
+        </aside>
+        <hr>
+        <section id="reserva">
+            <h2>Reservas</h2>
+            <form action="">
+                <fieldset>
+                    <legend>Formulario de reserva</legend>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Perez">
+                    <br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Ej: juanperez@example.com">
+                    <br>
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                    <br>
+                    <label for="hora">Hora:</label>
+                    <input type="time" id="hora" name="hora" required>
+                    <br>
+                    <label for="personas">Número de personas:</label>
+                    <input type="number" id="personas" name="personas" min="1" max="20" required>
+                    <br>
+                    <label for="comentarios">Comentarios:</label><br>
+                    <textarea id="comentarios" name="comentarios" rows="4"
+                        placeholder="Escribe tus comentarios aquí..."></textarea>
+                    <br>
+                    <button type="submit">Enviar reserva</button>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 - La buena mesa</p>
+    </footer>
+</body>
+
+</html>
