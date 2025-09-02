@@ -1,0 +1,120 @@
+<!--<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6h16" /><path d="M7 12h13" /><path d="M10 18h10" /></svg>-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon"
+        href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='icon icon-tabler icons-tabler-outline icon-tabler-menu-deep'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M4 6h16' /><path d='M7 12h13' /><path d='M10 18h10' /></svg>">
+    <title>MiTienda</title>
+</head>
+
+<body>
+    <header>
+        <a href="#top" class="header_logo" aria-label="Inicio">
+            <span class="header_mark" aria-hidden="true">M</span>
+            <span class="header_logo_title">MiTienda</span>
+        </a>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="#novedades">Novedades</a></li>
+                <li><a href="#ofertas">Ofertas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header_menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M4 6h16" />
+                <path d="M7 12h13" />
+                <path d="M10 18h10" />
+            </svg>
+        </div>
+    </header>
+    <main>
+        <section class="main-botones">
+            <h1>1. Sistema de botones</h1>
+            <div class="main-botones-container">
+                <button class="btn btn--primary">Primario</button>
+                <button class="btn btn--secondary">Secundario</button>
+                <button class="btn btn--outline">Outline</button>
+                <button class="btn btn--danger">Peligro</button>
+                <button class="btn btn--icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-search">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                        <path d="M21 21l-6 -6" />
+                    </svg>
+                    Con icono
+                </button>
+                <button class="btn btn--disabled" disabled>Deshabilitado</button>
+            </div>
+        </section>
+
+        <section class="main-productos">
+            <h1>2. Tarjeta de producto</h1>
+            <article class="product-card">
+                <div class="product-card__media">
+                    <div class="product-card__badge">
+                        Nuevo
+                    </div>
+                    <img src="./zapatillas.webp" alt="Producto" class="product-card__img">
+                </div>
+                <div class="product-card__info">
+                    <h2 class="product-card__title">Zapatillas Deportivas</h2>
+                    <p class="product-card__description">Zapatillas cómodas para el día a día.</p>
+                    <div>
+                        <span class="product-card__price">$ 24.999</span>
+                        <span class="product-card__old-price">$ 29.999</span>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn--primary">Comprar ahora</button>
+                        <button class="btn btn--outline">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="icon icon-tabler icons-tabler-outline icon-tabler-circle-dashed-plus">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M8.56 3.69a9 9 0 0 0 -2.92 1.95" />
+                                <path d="M3.69 8.56a9 9 0 0 0 -.69 3.44" />
+                                <path d="M3.69 15.44a9 9 0 0 0 1.95 2.92" />
+                                <path d="M8.56 20.31a9 9 0 0 0 3.44 .69" />
+                                <path d="M15.44 20.31a9 9 0 0 0 2.92 -1.95" />
+                                <path d="M20.31 15.44a9 9 0 0 0 .69 -3.44" />
+                                <path d="M20.31 8.56a9 9 0 0 0 -1.95 -2.92" />
+                                <path d="M15.44 3.69a9 9 0 0 0 -3.44 -.69" />
+                                <path d="M9 12h6" />
+                                <path d="M12 9v6" />
+                            </svg>
+                            Añadir
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+    </main>
+    <section class="main-cards">
+        <article class="card">
+            <h2 class="card__title">Novedades</h2>
+            <p class="card__description">Seccion de relleno para probar el menu</p>
+        </article>
+        <article class="card">
+            <h2 class="card__title">Ofertas</h2>
+            <p class="card__description">Otra seccion de relleno para probar el menu</p>
+        </article>
+        <article class="card">
+            <h2 class="card__title">Contacto</h2>
+            <p class="card__description">Mas contenido de ejemplo</p>
+        </article>
+    </section>
+
+</body>
+
+</html>

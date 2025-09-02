@@ -1,0 +1,361 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system;
+    line-height: 1.5;
+    color: #0f172a;
+    background: #f8fafc;
+}
+
+/* === Variables === */
+:root {
+    --bg: #f8fafc;
+    --panel: #fff;
+    --text: #0f172a;
+    --muted: #64748b;
+    --primary: #2563eb;
+    --primary-600: #1d4ed8;
+    --primary-700: #1e40af;
+    --accent: #16a34a;
+    --danger: #dc2626;
+    --danger-600: #FF2E2E;
+    --radius: 14px;
+    --shadow: 0 6px 24px rgba(15, 23, 42, 0.08);
+    --container: 1100px;
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-10: 40px;
+    --space-12: 48px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-4);
+    width: 100%;
+    height: 10vh;
+}
+
+.header_icono {
+    margin-right: var(--space-4);
+}
+
+.header_logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: var(--space-2);
+}
+
+.header_logo_title {
+    color: var(--text);
+}
+
+.header_mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: #fff;
+    font-weight: 800;
+}
+
+.header_nav {
+    display: none;
+}
+
+main {
+    width: 100%;
+    min-height: 90vh;
+    height: fit-content;
+    background-color: #e8e8e8;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-botones{
+    padding: var(--space-5) var(--space-5);
+}
+
+.main-botones-container {
+    padding: var(--space-5);
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    border-radius: 16px;
+    background-color: var(--panel);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    /* Espacio para el icono */
+    padding: 12px 24px;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    min-height: 48px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: var(--primary);
+    color: var(--panel);
+}
+
+.btn--primary {
+    background-color: var(--primary);
+    color: var(--panel);
+}
+
+.btn--primary:hover,
+.btn--icon:hover {
+    background-color: var(--panel);
+    color: var(--primary);
+    border: var(--primary) 2px solid;
+}
+
+.btn--primary:active,
+.btn--icon:active {
+    background-color: var(--primary-700);
+    color: var(--panel);
+}
+
+.btn--secondary {
+    background-color: #c5c5c5;
+    color: var(--text);
+}
+
+.btn--secondary:hover {
+    background-color: #636363;
+    color: var(--panel);
+    border: 2px solid #c5c5c5;
+}
+
+.btn--secondary:active {
+    background-color: #434343;
+    color: var(--text);
+}
+
+.btn--outline{
+    background-color: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn--outline:hover {
+    background-color: var(--primary);
+    color: var(--panel);
+}
+
+.btn--outline:active {
+    background-color: var(--primary-700);
+    color: var(--panel);
+}
+
+.btn--danger{
+    background-color: var(--danger);
+    color: var(--panel);
+}
+
+.btn--danger:hover {
+    background-color: var(--panel);
+    color: var(--danger);
+    border: 2px solid var(--danger);
+}
+
+.btn--danger:active {
+    background-color: var(--danger-600);
+    color: var(--panel);
+}
+
+.btn--disabled{
+    background-color: #e8e8e8;
+    color: var(--muted);
+    cursor: not-allowed;
+}
+
+/* Estilos generales para el contenedor principal */
+.main-productos {
+    padding: 20px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.main-productos h1 {
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilos de la tarjeta de producto */
+.product-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Asegura que la imagen y el badge no se salgan */
+    width: 100%;
+    max-width: 350px; /* Ajusta esto según el tamaño deseado de la tarjeta */
+    margin: 20px auto; /* Centra la tarjeta */
+    font-family: sans-serif;
+}
+
+.product-card__media {
+    position: relative;
+    padding: 20px; /* Espacio alrededor de la imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Fondo para la sección de la imagen */
+}
+
+.product-card__badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #ffc107; /* Color naranja para "Nuevo" */
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.product-card__img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Elimina espacio extra debajo de la imagen */
+}
+
+.product-card__info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre los elementos de información */
+}
+
+.product-card__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+.product-card__description {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.product-card__price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #333;
+    margin-top: 10px;
+}
+
+.product-card__old-price {
+    font-size: 1rem;
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 8px; 
+}
+
+.product-card .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.product-card .btn {
+    flex: 1; 
+    min-width: 120px; 
+    padding: 10px 15px; 
+    font-size: 0.95rem; 
+    border-radius: 6px; 
+}
+
+
+
+.product-card .btn--outline svg {
+    margin-right: 5px; 
+}
+
+
+.product-card .btn--outline svg {
+    color: #007bff; 
+}
+
+.main-cards{
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: #e8e8e8;
+}
+.main-cards .card{
+    padding: var(--space-4);
+    background-color: var(--bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 97vw;
+}
+
+
+@media (min-width:768px) {
+    .header_menu {
+        display: none;
+    }
+
+    .header_nav {
+        display: block;
+    }
+
+    .header_nav ul {
+        list-style: none;
+        display: flex;
+        gap: var(--space-6);
+    }
+
+    .header_nav a {
+        text-decoration: none;
+        color: var(--text);
+    }
+
+    main{
+        flex-direction: row;
+    }
+
+    .main-botones{
+        max-width: 50%;
+    }
+}
+
+@media (min-width:1200px) {
+    header {
+        padding: var(--space-6) calc((100vw - var(--container)) / 2);
+    }
+
+}
