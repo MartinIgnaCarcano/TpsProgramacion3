@@ -59,5 +59,40 @@ public class Main {
             System.out.println(dto);
         }
 
+        System.out.println("---------------------");
+        System.out.println("----Actividad IV ----");
+        System.out.println("---------------------");
+
+        Producto producto01 = new Producto("P001", "Laptop Gamer",1500.00, "TechCorp");
+        Producto producto02 = new Producto("P002", "Smartphone Pro", 800.50, "MobileCo");
+        Producto producto03 = new Producto("P003", "Tablet HD", 350.75, "GadgetMaker");
+
+        ProductoRecord recordVacio = new ProductoRecord("R001", "Monitor Ultrawide", 450.00);
+
+        ProductoRecord record1 = new ProductoRecord(producto1.getCodigo(), producto1.getNombre(), producto1.getPrecio());
+        ProductoRecord record2 = new ProductoRecord(producto2.getCodigo(), producto2.getNombre(), producto2.getPrecio());
+
+        ProductoRecord record3 = ProductoRecord.fromProducto(producto03);
+
+        List<Producto> listaProductos = new ArrayList<>();
+        listaProductos.add(producto01);
+        listaProductos.add(producto02);
+        listaProductos.add(producto03);
+
+        List<ProductoRecord> listaProductoRecords = new ArrayList<>();
+        listaProductoRecords.add(recordVacio);
+        listaProductoRecords.add(record1);
+        listaProductoRecords.add(record2);
+        listaProductoRecords.add(record3);
+
+        System.out.println("--- Lista de Productos (Clase) ---");
+        for (Producto producto : listaProductos) {
+            System.out.println(producto);
+        }
+
+        System.out.println("\n--- Lista de Productos (Record) ---");
+        for (ProductoRecord record : listaProductoRecords) {
+            System.out.println(record);
+        }
     }
 }
