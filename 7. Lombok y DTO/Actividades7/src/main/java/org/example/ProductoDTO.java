@@ -1,22 +1,17 @@
 package org.example;
 
-import lombok.Builder;
-import lombok.Data;
-
-public class Producto {
+public class ProductoDTO {
     private String codigo;
     private String nombre;
     private double precio;
-    private String autor;
 
-    public Producto(String codigo, String nombre, double precio, String autor) {
+    public ProductoDTO(String codigo, String nombre, double precio) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.precio = precio;
-        this.autor = autor;
     }
 
-    public Producto() {
+    public ProductoDTO() {
     }
 
     public String getCodigo() {
@@ -43,21 +38,12 @@ public class Producto {
         this.precio = precio;
     }
 
-    public String getAutor() {
-        return autor;
-    }
-
-    public void setAutor(String autor) {
-        this.autor = autor;
-    }
-
     @Override
     public String toString() {
-        return "Producto{" +
+        return "ProductoDTO{" +
                 "codigo=" + codigo +
                 ", nombre='" + nombre + '\'' +
                 ", precio=" + precio +
-                ", autor='" + autor + '\'' +
                 '}';
     }
 }
