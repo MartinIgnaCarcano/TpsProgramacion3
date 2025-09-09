@@ -4,9 +4,13 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, NoSuchFieldException {
+        //Actividad 2
         try {
             Persona persona = new Persona();
             System.out.println("ok");
@@ -46,6 +50,25 @@ public class Main {
 
         } catch(Exception e){
             throw e;
+        }
+        //Actividad 3
+        System.out.println("--- Caja de String ---");
+        Caja<String> cajaDeTexto = new Caja<>("Caja del string");
+        cajaDeTexto.mostrarContenido();
+        System.out.println();
+
+        System.out.println("--- Caja de Integer ---");
+        Caja<Integer> cajaDeNumero = new Caja<>(12345);
+        cajaDeNumero.mostrarContenido();
+        System.out.println();
+
+        List listaSinGenericos = new ArrayList();
+        listaSinGenericos.add(cajaDeTexto);
+        listaSinGenericos.add(cajaDeNumero);
+
+        for (Object objetoCaja: listaSinGenericos){
+            System.out.println("Tipo de objeto dentro de la lista: "+objetoCaja.getClass().getName());
+            System.out.println();
         }
     }
 }
