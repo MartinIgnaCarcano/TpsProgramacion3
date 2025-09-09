@@ -70,5 +70,25 @@ public class Main {
             System.out.println("Tipo de objeto dentro de la lista: "+objetoCaja.getClass().getName());
             System.out.println();
         }
+
+        //Acttividad 4
+
+        List<Integer> numeros = List.of(10, 20, 30, 40, 50);
+        System.out.println("Imprimiendo lista de enteros:");
+        imprimirLista(numeros);
+
+        List<String> palabras = List.of("Hola", "Mundo", "Genérico", "Java");
+        System.out.println("Imprimiendo lista de Strings:");
+        imprimirLista(palabras);
+
+    }
+
+
+    public static <T> void imprimirLista(List<T> lista) {
+        System.out.println("Contenido de la lista:");
+        for (T elemento : lista) {
+            System.out.println(elemento);
+        }
+        System.out.println("--------------------");
     }
 }
