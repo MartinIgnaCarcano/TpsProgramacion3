@@ -37,11 +37,7 @@ console.log("Palabras invertidas: " + invertidas);
 let pregunta = prompt("¿Desea comprotabar palindromos? (si/no)").toLowerCase(); //preguntamos al usuario si desea comprobar palíndromos
 if (pregunta == 'si' || pregunta == 'sí') {
     for (let i = 0; i < palabras.length; i++) { 
-        if (palabras[i] === invertidas[i]) { //comparamos la palabra original con la invertida para ver si es palíndromo
-            console.log("La palabra " + palabras[i] + " es un palindromo")
-        } else {
-            console.log("La palabra " + palabras[i] + " NO es un palindromo")
-        }
+        console.log(`La palabra ${palabras[i]} ${palabras[i] === invertidas[i] ? "es" : "NO es"} un palindromo`);
     }
 }
 
@@ -49,11 +45,8 @@ if (pregunta == 'si' || pregunta == 'sí') {
 let superPalabra="";
 for (let i = 0; i < palabras.length; i++) {
     if (palabras[i].length>4) { //si la palabra tiene más de 4 caracteres la agregamos
-        if(i!=0){
-            superPalabra+="-"+palabras[i] //si no es la primera, agregamos un guion antes
-        }else{
-            superPalabra+=palabras[i] //si es la primera, la agregamos sin guion
-        }
+        superPalabra+= (i!=0?"-":"")+palabras[i] //si no es la primera, agregamos un guion antes
     }
 }
 console.log(superPalabra) //mostramos la cadena final de palabras largas unidas con guiones
+
