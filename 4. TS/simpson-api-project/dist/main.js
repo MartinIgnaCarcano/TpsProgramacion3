@@ -5,11 +5,9 @@ const spinner = document.getElementById("spinner");
 const error = document.getElementById("error");
 const errorMessage = document.getElementById('error-message');
 const personajes = document.getElementById("personajes");
+let page = 1;
 cargarPersonajes.addEventListener('click', () => {
-    showLoading();
-    setTimeout(() => {
-        hideLoading();
-    }, 9000);
+    fetchCharacters();
 });
 function showLoading() {
     spinner.style.display = "flex";
@@ -35,9 +33,46 @@ function createCharacterCard(character) {
     h3.textContent = character.name;
     const p = document.createElement('p');
     p.className = 'character-card-p';
-    p.textContent = character.phrases[0];
+    if (!character.phrases || character.phrases.length === 0) {
+        p.textContent = "No tiene frase";
+    }
+    else {
+        const fraseMasCorta = character.phrases.reduce((masCorta, actual) => actual.length < masCorta.length ? actual : masCorta);
+        p.textContent = fraseMasCorta;
+    }
     div.append(img);
     div.append(h3);
     div.append(p);
     return (div);
+}
+const renderCharacters = (characters) => {
+    personajes.innerHTML = '';
+    const aux = characters.map(createCharacterCard);
+    personajes.append(...aux);
+};
+const fetchCharacters = async () => {
+    try {
+        showLoading();
+        const response = await fetch(consultarUrl());
+        if (!response.ok)
+            throw new Error("Error al obtener datos");
+        const data = await response.json();
+        renderCharacters(data.results);
+    }
+    catch (error) {
+        showError(error.message);
+    }
+    finally {
+        hideLoading();
+    }
+};
+function consultarUrl() {
+    let urlEnviar = APIURL;
+    if (page != 1) {
+        urlEnviar += '?page=' + page;
+    }
+    console.log(page);
+    page += 1;
+    cargarPersonajes.textContent = 'Cargar Personajes page= ' + page;
+    return urlEnviar;
 }
