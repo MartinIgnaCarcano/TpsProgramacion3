@@ -162,7 +162,7 @@ nav a {
     height: 100vh;
 }
 
-.skills-container{
+.skills-container {
     height: fit-content;
     width: 80vw;
     display: flex;
@@ -223,16 +223,154 @@ nav a {
 }
 
 
+.proyectos {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.proyectos-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+    position: relative;
+}
+
+.proyectos-grid-btns {
+    background-color: #171717;
+    border: none;
+    height: 50px;
+    width: 50px;
+}
+
+.proyectos-grid-btns:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+.proyectos-grid-btns img {
+    height: 100%;
+    width: 100%;
+}
 
 
+.proyectos-grid-carrusel {
+    width: min(90vw, 1050px);
+    overflow: hidden;
+    display: flex;
+    gap: 70px;
+    transition: transform 0.6s ease;
+}
+
+.proyectos-card {
+    width: 450px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #22c55e;
+    border-radius: 16px;
+    padding: 10px;
+}
+
+.proyectos-card img {
+    width: 450px;
+    height: 250px;
+    border-radius: 16px 16px 0px 0px;
+}
+
+.proyectos-card h3 {
+    text-align: center;
+}
+
+.proyectos-card-btns {
+    display: flex;
+    justify-content: space-around;
+}
+
+.proyectos-dots {
+    width: 250px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+.proyectos-dot {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.proyectos-dot.active {
+    background: #22c55e;
+}
 
 
+.contacto {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
 
+.contacto-form {
+    min-width: 300px;
+    width: 800px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
+.contacto-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    grid-auto-rows: minmax(50px, auto);
+}
 
+.contacto-form-grid input {
+    max-height: 40px;
+    border: none;
+    border-bottom: #a1a1a1 solid 1px;
+    background-color: #171717;
+    color: white;
+    padding-left: 30px;
+    font-size: 1.1rem;
+}
 
+.contacto-form textarea {
+    height: 80px;
+    border: #a1a1a1 solid 1px;
+    background-color: #171717;
+    color: white;
+    padding: 10px 30px 30px 30px;
+    font-size: 1.1rem;
+}
 
+.contacto-form-btn {
+    text-align: center;
+}
 
+footer {
+    width: 100vw;
+    height: 10vh;
+    text-align: center;
+}
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
@@ -260,13 +398,177 @@ nav a {
         display: none;
     }
 
-    .skills-container{
+    .skills-container {
         width: 100vw;
         border: none;
     }
 
-    .carrusel-track2{
+    .carrusel-track2 {
         display: flex;
     }
 
+
+    .proyectos-card {
+        width: 85vw;
+
+        height: auto;
+    }
+
+    .proyectos-grid-carrusel {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .proyectos-grid {
+        gap: 10px;
+    }
+
+    .proyectos-grid-btns {
+        width: 40px;
+        height: 40px;
+    }
+
+    .proyectos-dots {
+        gap: 5px;
+    }
+
+    .proyectos-dot {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) { /* agregado */
+
+  header { /* agregado */
+    height: auto; /* agregado */
+    padding: 10px 0; /* agregado */
+  }
+
+  .header-content { /* agregado */
+    width: 95%; /* agregado */
+    flex-direction: column; /* agregado */
+    gap: 10px; /* agregado */
+  }
+
+  .hero { /* modificado */
+    flex-direction: column; /* modificado */
+    align-items: center; /* agregado */
+    justify-content: center; /* agregado */
+    padding: 60px 10px; /* agregado */
+    text-align: center; /* agregado */
+    min-height: 80vh; /* agregado */
+  }
+
+  .hero-content { /* modificado */
+    padding-left: 0; /* modificado */
+    max-width: 90vw; /* agregado */
+  }
+
+  .hero-content h2 { /* agregado */
+    font-size: 1.8rem; /* agregado */
+  }
+
+  .hero-content h3 { /* agregado */
+    font-size: 1.2rem; /* agregado */
+  }
+
+  .hero-content-btns { /* agregado */
+    flex-direction: column; /* agregado */
+    gap: 10px; /* agregado */
+    align-items: center; /* agregado */
+  }
+
+  .about-me { /* modificado */
+    height: auto; /* modificado */
+    padding: 40px 10px; /* agregado */
+  }
+
+  .about-me p { /* modificado */
+    width: 90vw; /* modificado */
+    font-size: 1rem; /* modificado */
+    text-indent: 0; /* modificado */
+  }
+
+  .skills { /* modificado */
+    height: auto; /* modificado */
+    padding: 40px 0; /* modificado */
+  }
+
+  .skills-container { /* modificado */
+    width: 95vw; /* modificado */
+    border: none; /* modificado */
+  }
+
+  .carrusel-slide img { /* agregado */
+    width: 80px; /* agregado */
+    height: auto; /* agregado */
+  }
+
+  .proyectos { /* modificado */
+    height: auto; /* modificado */
+    padding: 40px 0; /* agregado */
+    gap: 30px; /* agregado */
+  }
+
+  .proyectos-grid { /* modificado */
+    gap: 5px; /* modificado */
+    flex-direction: column; /* agregado */
+  }
+
+  .proyectos-grid-carrusel { /* modificado */
+    width: 100%; /* modificado */
+    justify-content: center; /* modificado */
+    overflow: hidden; /* agregado */
+  }
+
+  .proyectos-card { /* modificado */
+    width: 90vw; /* modificado */
+    height: auto; /* modificado */
+  }
+
+  .proyectos-card img { /* modificado */
+    width: 100%; /* modificado */
+    height: auto; /* modificado */
+  }
+
+  .proyectos-card-btns { /* agregado */
+    flex-direction: column; /* agregado */
+    gap: 10px; /* agregado */
+  }
+
+  .proyectos-grid-btns { /* modificado */
+    width: 35px; /* modificado */
+    height: 35px; /* modificado */
+  }
+
+  .proyectos-dot { /* modificado */
+    width: 15px; /* modificado */
+    height: 15px; /* modificado */
+  }
+
+  .contacto { /* modificado */
+    height: auto; /* modificado */
+    padding: 50px 0; /* agregado */
+  }
+
+  .contacto-form { /* modificado */
+    width: 90vw; /* modificado */
+  }
+
+  .contacto-form-grid { /* modificado */
+    grid-template-columns: 1fr; /* modificado */
+    grid-gap: 15px; /* modificado */
+  }
+
+  .contacto-form input, /* agregado */
+  .contacto-form textarea { /* agregado */
+    font-size: 1rem; /* agregado */
+  }
+
+  footer { /* modificado */
+    height: auto; /* modificado */
+    padding: 10px 0; /* agregado */
+    font-size: 0.9rem; /* agregado */
+  }
 }
